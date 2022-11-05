@@ -1,0 +1,1 @@
+.libPaths("C:/Users/leona/Documents/R-4.2.1/library")

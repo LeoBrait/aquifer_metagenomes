@@ -1,0 +1,36 @@
+Funções mais importantes.
+
+ok 1. Outer_membrane_protein_A_precursor                                                |1: Stress Response  2:Osmotic stress 3:Osmoregulation 
+
+ok 2. TonB-dependent_receptor                                                           |1:Iron acquisition and metabolism	 2:Siderophores	3:Siderophore Enterobactin 
+                      
+ok 3. Cobalt.zinc.cadmium_resistance_protein_CzcA._Cation_efflux_system_protein_CusA.1  |1:Virulence 2:Resistance to antibiotics and toxic compounds 3: Cobalt-zinc-cadmium resistance 
+
+ok 4. diguanylate_cyclase/phosphodiesterase_(GGDEF_&_EAL_domains)_with_PAS/PAC_sensor(s)|1:Potassium metabolism	2:NA	3:Glutathione-regulated potassium-efflux system and associated functions
+
+ok 5. Long.chain.fatty.acid..CoA_ligase_.EC_6.2.1.3..1                                  |1: Fatty Acids, Lipids,  and Isoprenoids 2: -   3:Polyunsaturated fatty acids biosynthesis in plants
+
+
+ok 6. 3.oxoacyl..acyl.carrier.protein._synthase._KASIII_.EC_2.3.1.180.                  |1:Fatty Acids, Lipids, and Isoprenoids 2: Fatty acids 3: Fatty Acid Biosynthesis FASII
+
+ok 7. Excinuclease_ABC_subunit_A                                                        |1: DNA Metabolism	 2:DNA repair	3:DNA repair, UvrABC system
+
+
+ok 8. Leucyl.tRNA_synthetase_.EC_6.1.1.4						     |1:Protein Metabolism	2:Protein biosynthesis	3:tRNA aminoacylation, Leu
+
+
+ok 9. Translation_elongation_factor_Tu.4                                                |1:RNA Metabolism	2:RNA processing and modification 3:tRNA modification Archaea
+
+ok 10. DNA.directed_RNA_polymerase_beta_subunit_(EC_2.7.7.6)[2]                         |1:Virulence	2:-	3:Mycobacterium virulence operon involved in DNA transcription
+
+ok 11. Phage_major_capsid_protein_.Fam0055                                              |1: Phages, Prophages, Transposable elements 2:Bacteriophage structural proteins 3:Phage capsid proteins
+
+ok 12. DNA.directed_RNA_polymerase_beta._subunit_.EC_2.7.7.6..1[1]                      |1:Virulence	2:Resistance to antibiotics and toxic compounds	3:Legionella pneumophila Potential Resistome
+
+
+ok 13. NADH_dehydrogenase_subunit_5                                                     |1:Carbohydrates	2:CO2 fixation	3:beta carboxysome
+
+
+14. X3.oxoacyl..acyl.carrier_protein._reductase_.EC_1.1.1.100.                       |1:Fatty Acids, Lipids, and Isoprenoids 2: Fatty acids 3:Fatty Acid Biosynthesis FASII
+
+
