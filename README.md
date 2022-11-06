@@ -11,34 +11,34 @@ Here we use the R language on version 4.2.1 and the following libraries:
 - ** parallel(base)**
 
 ### 2. For data wrangling
-- ** dplyr(1.1.10)**
-- ** plyr(1.8.7)**
-- ** tidyverse(1.3.2)**
+- **dplyr(1.1.10)**
+- **plyr(1.8.7)**
+- **tidyverse(1.3.2)**
 
 ### 3. For Geoprocessing:
-- ** geosphere(1.514)**
-- ** psych(2.2.9)**
-- ** raster(3.63)**
+- **geosphere(1.514)**
+- **psych(2.2.9)**
+- **raster(3.63)**
 
 ### 4. To perform statistic analysis
-- ** vegan(2.62)** 
-- ** lmPerm(2.1.0)**
-- ** stats(base)** 
-- ** rstatix(0.7.0)** 
-- ** EcolUtils(0.1)**
-- ** multcomp(1.4_20)** 
+- **vegan(2.62)** 
+- **lmPerm(2.1.0)**
+- **stats(base)** 
+- **rstatix(0.7.0)** 
+- **EcolUtils(0.1)**
+- **multcomp(1.4_20)** 
 
 ### 5. For data visualization
-- ** ggplot2(3.3.6)** 
-- ** cowplot(1.1.1)** 
-- ** ggpubr(0.4.0)** 
-- ** reshape(0.8.9)**
-- ** RColorBrewer(1.13)**
-- ** gridExtra(2.3)**
-- ** scales(1.2.1)**
-- ** evaluate(0.17)**
-- ** corrplot(0.92)**
-- ** ggplotify(0.1.0)**
+- **ggplot2(3.3.6)** 
+- **cowplot(1.1.1)** 
+- **ggpubr(0.4.0)** 
+- **reshape(0.8.9)**
+- **RColorBrewer(1.13)**
+- **gridExtra(2.3)**
+- **scales(1.2.1)**
+- **evaluate(0.17)**
+- **corrplot(0.92)**
+- **ggplotify(0.1.0)**
 
 ## Getting started:
 After installing R language and all libraries above, simply download all the project, go to pipelines/master.r and change the path of setwd() to the correspondent path of aquifers_master on your computer and run the code. 
