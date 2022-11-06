@@ -1,8 +1,6 @@
 # Aquifers Landscapes Defines Taxonomy and Functional Genes of Microbiomes 
 
-#### This is a organized pipeline to analyse public metagenomic annotated data from aquifer microbiomes. Here
-#### we do Simper, CCA, NMDS, Anovas, peranovas and permanovas analysis to reveal patterns of the composition
-#### and diversity of functional genes and taxonomic units of different aquifer types around the world.
+This is a organized pipeline to analyse public metagenomic annotated data from aquifer microbiomes. Here we do Simper, CCA, NMDS, Anovas, peranovas and permanovas analysis to reveal patterns of the composition and diversity of functional genes and taxonomic units of different aquifer types around the world.
 
 ## Requiriments:
 #### Here we use the R language on version 4.2.1 and the following libraries:
