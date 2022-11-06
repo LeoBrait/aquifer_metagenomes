@@ -1,5 +1,0 @@
-linters: linters_with_defaults(
-  camel_case_linter = NULL,
-  object_name_linter = NULL,
-  line_length_linter(99999)
-  )
