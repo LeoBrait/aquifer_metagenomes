@@ -7,8 +7,8 @@ Here we use the R language on version 4.2.1 and the following libraries:
 <sub>Please observe if all of them are installed and its correspondent dependencies before running the codes.</sub>
 
 ### 1. For utilities and performance
-- ** devtools(2.5.5)**
-- ** parallel(base)**
+- **devtools(2.5.5)**
+- **parallel(base)**
 
 ### 2. For data wrangling
 - **dplyr(1.1.10)**
@@ -44,7 +44,9 @@ Here we use the R language on version 4.2.1 and the following libraries:
 After installing R language and all libraries above, simply download all the project, go to pipelines/master.r and change the path of setwd() to the correspondent path of aquifers_master on your computer and run the code. 
 
 ## Contributors:
+
 **Authors:** Brait LAS, Barbosa FAS, Ferreira CAM, Mkrull and Moreira EF.
+
 **Revised by:** Meirelles, PM
 
 ## Versions:
