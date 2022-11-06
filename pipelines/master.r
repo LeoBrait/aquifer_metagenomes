@@ -6,7 +6,6 @@
 ##############################################
 
 setwd(
-      "C://Users//leona//OneDrive//Produção de Artigos//AquiferMetagenomes//aquifers_master"
       )
 
 ################ 1.0 LOAD LIBRARIES ##########
