@@ -3,7 +3,7 @@
 This is a organized pipeline to analyse public metagenomic annotated data from aquifer microbiomes. Here we do Simper, CCA, NMDS, Anovas, peranovas and permanovas analysis to reveal patterns of the composition and diversity of functional genes and taxonomic units of different aquifer types around the world.
 
 ## Requiriments:
-Here we use the R language on version 4.2.1 and the following libraries:
+Here we use the R language on version 4.2.1 and the following libraries:  
 <sub>Please observe if all of them are installed and its correspondent dependencies before running the codes.</sub>
 
 ### 1. For utilities and performance
@@ -45,8 +45,7 @@ After installing R language and all libraries above, simply download all the pro
 
 ## Contributors:
 
-**Authors:** Brait LAS, Barbosa FAS, Ferreira CAM, Mkrull and Moreira EF.
-
+**Authors:** Brait LAS, Barbosa FAS, Ferreira CAM, Mkrull and Moreira EF.  
 **Revised by:** Meirelles, PM
 
 ## Versions:
