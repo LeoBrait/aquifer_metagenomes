@@ -75,9 +75,9 @@ source(
 ############################### SIMPER ########
 #Description: Here we are going to do 3 SIMPER
 #analysis. If you already have the simper summa
-#ry tables, it is not necessary.The final result 
-#with only the significant values go to the "result" 
-#path, and the partial (withall values) goes to 
+#ry tables, it is not necessary.The final result
+#with only the significant values go to the "result"
+#path, and the partial (withall values) goes to
 #"output_name" path.
 ###############################################
 
@@ -144,6 +144,20 @@ phyla0 %>% group_by(category) %>% dplyr::summarise(mean(Candidatus.Wolfebacteria
 ###### example of Dissimilar Functions Abundances
 functions0 %>% group_by(category) %>% dplyr::summarise(mean(TRAP.type_C4.dicarboxylate_transport_system._large_permease_component.2))
 
+###############################################
+######################### CCA and NMDS ########
+#Description: Here we are going to do 3 SIMPER
+#analysis. If you already have the simper summa
+#ry tables, it is not necessary.The final result
+#with only the significant values go to the "result"
+#path, and the partial (withall values) goes to
+#"output_name" path.
+###############################################
+
+source(
+       "pipelines//cca//cca_master.r"
+      )
+      
 ###############################################
 ################# PERMANOVAS PERANOVAS ########
 #Description: Compare difference on compositions

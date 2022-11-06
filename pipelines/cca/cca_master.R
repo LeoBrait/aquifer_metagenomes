@@ -50,13 +50,11 @@ source(
 )
 
 
-
 #######Multiconstrained
 
 source(
   "pipelines//cca//multiconstrained.r"
 )
-
 
 
 
@@ -72,12 +70,6 @@ load("images//cca_leo.RData")
 source(
       "pipelines//nmds//nmds_master.r"
       )
-func_nmds
-phyla_nmds
-
-
-
-
 
 
 ## ploting the data
@@ -94,7 +86,6 @@ p_cca_func <- cca_plot
 #genus
 source("pipelines//cca//plot_cca_genus_data.r")
 source("pipelines//cca//plot_cca_aes.r")
-cca_plot
 p_cca_genus <- cca_plot
 ggsave(plot = p_cca_genus, filename = paste("outputs//Figures//p_cca_genus.png", sep = ""), width = unit(19, "cm"), height = unit(19, "cm"), limitsize = FALSE)
 
@@ -104,10 +95,6 @@ label <- label_func
 p2 <- as.grob(p_cca_func)
 p3 <- as.grob(phyla_nmds)
 p4 <- as.grob(func_nmds)
-
-
-
-
 
 
 #pannel
