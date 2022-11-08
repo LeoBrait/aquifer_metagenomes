@@ -138,20 +138,23 @@ View(ranking_func)
 
 
 ###### example of Dissimilar Genera Abundances
-genus0 %>% group_by(category) %>% dplyr::summarise(mean(Sulfuricurvum))
+genus0 %>% group_by(category) %>% dplyr::summarise(mean(Smithella))
 ###### example of Dissimilar Rare Phyla Abundances
-phyla0 %>% group_by(category) %>% dplyr::summarise(mean(Candidatus.Wolfebacteria))
+phyla_numeric %>% group_by(category) %>% dplyr::summarise(mean(Candidatus.Wolfebacteria))
 ###### example of Dissimilar Functions Abundances
 functions0 %>% group_by(category) %>% dplyr::summarise(mean(TRAP.type_C4.dicarboxylate_transport_system._large_permease_component.2))
 
+phyla_numeric %>% dplyr::summarise(mean(Proteobacteria))
+proteo_numeric %>% dplyr::summarise(mean(Gammaproteobacteria))
+proteo_numeric %>% dplyr::summarise(mean(Alphaproteobacteria))
+proteo_numeric %>% dplyr::summarise(mean(Deltaproteobacteria))
+phyla_numeric %>% dplyr::summarise(mean(Actinobacteria))
+phyla_numeric %>% dplyr::summarise(mean(Euryarchaeota))
 ###############################################
 ######################### CCA and NMDS ########
-#Description: Here we are going to do 3 SIMPER
-#analysis. If you already have the simper summa
-#ry tables, it is not necessary.The final result
-#with only the significant values go to the "result"
-#path, and the partial (withall values) goes to
-#"output_name" path.
+#Description: Here we are going to do CCA Analysis
+#to test the ambiental correlations with micro-
+#bial compositions.
 ###############################################
 
 source(

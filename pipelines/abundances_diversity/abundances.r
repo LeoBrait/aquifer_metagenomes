@@ -29,12 +29,15 @@ phyla_abundants <- phyla_numeric %>% tidyr::gather() %>% dplyr::group_by(key) %>
 others <- dplyr::select(phyla_numeric, -phyla_abundants)
 abundant_phyla <- dplyr::select(phyla_numeric, phyla_abundants)
 abundant_phyla$others <- rowSums(others)
-abundant_phyla <- rbind(abundant_phyla, colSums(select_if((abundant_phyla), is.numeric))/110)
+abundant_phyla %>% dplyr::summarise(mean(others)) #IMportance of low abundant
+abundant_phyla <- rbind(abundant_phyla, colSums(select_if((abundant_phyla), is.numeric)) / 110)
+
 abundant_phyla <- t(abundant_phyla)
 abundant_phyla_ord <- abundant_phyla[order(abundant_phyla[,110], decreasing = T),]
 
 abundant_phyla <- t(abundant_phyla_ord)
 abundant_phyla <- as.data.frame(abundant_phyla[-110,])
+
 
 ########### Phyla Analysis Most rare
 phyla_rares <- phyla_numeric %>% tidyr::gather() %>% dplyr::group_by(key) %>%

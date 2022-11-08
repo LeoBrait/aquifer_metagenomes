@@ -21,6 +21,7 @@ rm(genera_dist_matrix, genera_perm_model, perma_genera_pairwise)
 #PHYLA PERMANOVA
 phyla_dist_matrix <- vegdist(phyla_numeric, method = "manhattan")
 phyla_perm_model <- adonis2(phyla_numeric ~ phyla0$category, permutations = 4999)
+summary(phyla_perm_model)
 perma_phyla_pairwise <- adonis.pair(phyla_dist_matrix, phyla0$category, nper = 4999, corr.method = "fdr")
 write.csv(perma_phyla_pairwise, file = paste("outputs//tables//permanova_phyla-pairwise.csv"))
 rm(phyla_dist_matrix, phyla_perm_model, perma_phyla_pairwise)
