@@ -27,3 +27,15 @@
         save.image(
                     "images//starting_point.RData"
                   )
+
+                  n_sequences <- read_csv(
+                              "inputs//number_of_sequences.csv"
+                        )
+
+total <- sum(n_sequences$bp_count_raw)
+bp_sample <- total / 149
+bp_sample
+sequences <- bp_sample
+
+sequences <- total/ 149
+sequences

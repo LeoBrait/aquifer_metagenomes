@@ -1,6 +1,7 @@
 functions <- functions0
 genus <- genus0
 phyla <- phyla0
+category <- functions0$category
 
 #FUNCTIONAL PERMANOVA
 func_dist_matrix <- vegdist(func_numeric, method = "manhattan")
@@ -30,9 +31,15 @@ rm(phyla_dist_matrix, phyla_perm_model, perma_phyla_pairwise)
 genus$richness <- rowSums(genus_numeric > 0) #Array of Genera Richness
 functions$richness <- rowSums(func_numeric > 0)  #Array of Functions Richness
 
+func_numeric$category <- category
+func_numeric$richness <- functions$richness
+func_numeric %>% group_by(category) %>% dplyr::summarise(median(richness))
+
 #Shannon diversity
 genus$diversity <- exp(diversity(genus_numeric)) #Getting genera diversity and transforming by exp
 functions$diversity <- exp(diversity(func_numeric)) #Same here
+
+bp <- metadata0$bp_count_raw
 
 
 # 1. FUNCTIONAL RICHNESS PERANOVA
