@@ -1,18 +1,43 @@
-load("images//starting_point.RData")
+
 
 
 #Creating a list of correspondences and then abreviating aquifer Names
-aquifer_names <- data.frame( a <- c("Karst-Porous", "Porous Contaminated", "Subsurface saline", "Mine", "Geyser", "Porous"),
-                             b <- c("Karst P.", "P. Contaminated", "S. Saline", "Mine", "Geyser", "Porous"))
+aquifer_names <- data.frame(
+                    a <- c("Karst-Porous",
+                           "Porous Contaminated",
+                           "Subsurface saline",
+                           "Mine",
+                           "Geyser",
+                           "Porous"
+                           ),
+                    b <- c(
+                          "Karst P.",
+                          "P. Contaminated",
+                          "S. Saline",
+                          "Mine",
+                          "Geyser",
+                          "Porous"))
 
-functions0$category <- aquifer_names$b[match(functions0$category, aquifer_names$a)]
-genus0$category <- aquifer_names$b[match(genus0$category, aquifer_names$a)]
-phyla0$category <- aquifer_names$b[match(phyla0$category, aquifer_names$a)]
-proteo0$category <- aquifer_names$b[match(proteo0$category, aquifer_names$a)]
-metadata0$level_3 <- aquifer_names$b[match(metadata0$level_3, aquifer_names$a)]
-amb0$level_3 <- aquifer_names$b[match(amb0$level_3, aquifer_names$a)]
+functions0$category <- aquifer_names$b[
+                        match(functions0$category, aquifer_names$a)
+                                      ]
+genus0$category <- aquifer_names$b[
+                        match(genus0$category, aquifer_names$a)
+                                  ]
+phyla0$category <- aquifer_names$b[
+                        match(phyla0$category, aquifer_names$a)
+                                  ]
+proteo0$category <- aquifer_names$b[
+                        match(proteo0$category, aquifer_names$a)
+                                   ]
+metadata0$level_3 <- aquifer_names$b[
+                        match(metadata0$level_3, aquifer_names$a)
+                                    ]
+amb0$level_3 <- aquifer_names$b[
+                        match(amb0$level_3, aquifer_names$a)
+                               ]
 
-#Categorizing and correctiong capital letter
+#Transforming category names in factors and correcting capital letter
 functions0$category <- as.factor(functions0$category)
 genus0$category <- as.factor(genus0$category)
 phyla0$category <- as.factor(phyla0$category)
@@ -60,8 +85,15 @@ proteo_numeric <- sapply(proteo_numeric, as.numeric)
 proteo_numeric <- as.data.frame(proteo_numeric)
 row.names(proteo_numeric) <- proteo0$samples
 
-metadata0$level_3 <- factor(metadata0$level_3,      # Reordering group factor levels
-                                     levels = c("Karst P.", "Porous", "P. Contaminated", "S. Saline", "Geyser", "Mine"))
+metadata0$level_3 <- factor(metadata0$level_3, # Reordering group factor levels
+                                     levels = c("Karst P.",
+                                                "Porous",
+                                                "P. Contaminated",
+                                                "S. Saline",
+                                                "Geyser",
+                                                "Mine"
+                                                )
+                            )
 
 #5. Ambiental
 amb0 <- amb0[match(genus0$samples, amb0$samples),]
@@ -76,10 +108,20 @@ amb_numeric <- as.data.frame(amb_numeric)
 row.names(amb_numeric) <- amb0$samples
 
 
-amb0$level_3 <- factor(metadata0$level_3,      # Reordering group factor levels
-                                     levels = c("Karst P.", "Porous", "P. Contaminated", "S. Saline", "Geyser", "Mine"))
+amb0$level_3 <- factor(metadata0$level_3, # Reordering group factor levels
+                                     levels = c("Karst P.",
+                                                "Porous",
+                                                "P. Contaminated",
+                                                "S. Saline",
+                                                "Geyser",
+                                                "Mine"
+                                                )
+                      )
 
-ambiental_clustered <- cbind(clust_dist = amb0$clust_dist, category = amb0$level_3, amb_numeric)
+ambiental_clustered <- cbind(clust_dist = amb0$clust_dist,
+                                          category = amb0$level_3,
+                                          amb_numeric
+                            )
 
 
 
@@ -95,6 +137,11 @@ m <- metadata0[metadata0$level_3 == "Mine", ]
 
 
 
-
-position <- c(kp$PubName, p$PubName, pc$PubName, ss$PubName, g$PubName, m$PubName)
+# This will be latter used for the stacked bars.
+position <- c(kp$PubName,
+              p$PubName,
+              pc$PubName,
+              ss$PubName,
+              g$PubName,
+              m$PubName)
 print("Your data is now clean!")

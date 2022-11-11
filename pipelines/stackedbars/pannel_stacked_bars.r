@@ -13,7 +13,7 @@ r_phyla <- ggplot(df_phyla_rare, aes(x = samples, y = value, fill = variable)) +
         panel.grid.minor.y = element_blank()) +
 
   ## Bars
-  geom_bar(stat = "identity",width =  barwidth) +
+  geom_bar(stat = "identity", width =  barwidth) +
   guides(fill = guide_legend(reverse = FALSE)) +
   scale_fill_manual(values = stacked_color) +
 
@@ -22,7 +22,7 @@ r_phyla <- ggplot(df_phyla_rare, aes(x = samples, y = value, fill = variable)) +
   labs(title = element_blank(), x = element_blank(), y = "Relative Abundance", fill = "Rare Phyla") +
 
   ## Legends
-  scale_color_discrete(name = "Rare Phyla") +
+  scale_color_discrete(name = "Phyla") +
   theme(legend.title = element_text(size = titletext, face = "bold")) +
   theme(legend.text = element_text(size = legendtext)) +
   guides(fill = guide_legend(ncol = 5, byrow = TRUE, , label.hjust = 0)) +
@@ -52,7 +52,7 @@ r_phyla <- ggplot(df_phyla_rare, aes(x = samples, y = value, fill = variable)) +
   ## Plot Tag
   labs(tag = "A", element_text(size = 100, face = "bold")) +
   theme(plot.tag = element_text(size = 25, face = "bold")) +
-  ylim(0, 0.11)
+ ylim(0, 0.56)
 
 r_phyla
 

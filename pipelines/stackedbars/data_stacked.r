@@ -2,7 +2,7 @@
 # generating inputs for the stacked bars.
 
 # To do this properly, we have to Re-Run the abundances calculations.
-source("pipelines//abundances.r")
+source("pipelines//abundances_diversity//abundances.r")
 
 
 
@@ -42,37 +42,37 @@ df$category <- factor(df$category,
 stacked_phyla <- df
 
 
-########################### RARE PHYLA ########
+###############################################
+################### LOW ABUNTANT PHYLA ########
 
+# Geting the most relevant genera pointed by SIMPER analysis
 rare_phyla_data <-    data.frame(phyla0$category,                            phyla0$samples, Others <- c(rep(NA, 109)),
-                                 phyla0$Candidatus.Parcubacteria,            phyla0$Deinococcus.Thermus,          
-                                                              
+                                 phyla0$Candidatus.Parcubacteria,            phyla0$Candidatus.Atribacteria,
+                                 phyla0$Candidatus.Nealsonbacteria,          phyla0$Deinococcus.Thermus,
 
                                  phyla0$Candidatus.Saccharibacteria,         phyla0$candidate.division.NC10,
                                  phyla0$Candidatus.Cloacimonetes,            phyla0$Candidatus.Dadabacteria,
                                  phyla0$Candidatus.Desantisbacteria,         phyla0$Cyanobacteria,
 
                                  phyla0$Candidatus.Roizmanbacteria,          phyla0$candidate.division.Zixibacteria,
-                                 phyla0$Candidatus.Riflebacteria,            phyla0$Thaumarchaeota,
-                                 phyla0$Fusobacteria,                        phyla0$Balneolaeota)
+                                 phyla0$Candidatus.Riflebacteria,            phyla0$Candidatus.Wolfebacteria)
 
 # Treating Data to more Friendly names
 colnames(rare_phyla_data)[1:17] <- c("category",                        "samples", "Others",
-                                 "Cand. Parcubacteria",                 "Deinococcus Thermus",
+                                 "Cand. Parcubacteria",                 "Cand. Atribacteria",
+                                 "Cand. Nealsonbacteria",               "Deinococcus Thermus",
 
                                  "Cand. Saccharibacteria",             "Cand. div. NC10",
                                  "Cand. Cloacimonetes",                "Cand. Dadabacteria",
                                  "Cand. Desantisbacteria",             "Cyanobacteria",
 
                                  "Cand. Roizmanbacteria",              "Cand. div. Zixibacteria",
-                                 "Cand. Riflebacteria",                 "Thaumarchaeota",
-                                 "Fusobacteria",                         "Balneolaeota"
-                                 )
+                                 "Cand. Riflebacteria",                "Cand. Wolfebacteria")
 
 # Forging number of Others
 total_relevant <- rowSums(rare_phyla_data[, 4:17])
 total_relevant
-Others <-  0.10 - total_relevant
+Others <-  0.55 - total_relevant
 Others
 total_relevant
 rare_phyla_data$Others <- Others
@@ -133,9 +133,10 @@ df_genus$category <- factor(df_genus$category,      # Reordering group factor le
 
 ###############################################
 ############################ FUNCTIONS ########
+functions0["TonB-dependent_receptor"]
 
 # Geting the most relevant functions pointed by SIMPER analysis
-functions_relevant <- data.frame(functions0$category,                                                                          metadata0$samples, Others <- c(rep(NA, 109)),
+functions_relevant <- data.frame(functions0$category,                                                                          metadata0$samples, Others = c(rep("NA", 109)),
                                  functions0$TonB.dependent_receptor,                                                           functions0$Outer_membrane_protein_A_precursor.3,
                                  functions0$Phage_major_capsid_protein_.Fam0055,                                               functions0$TRAP.type_C4.dicarboxylate_transport_system._large_permease_component.2,
 
@@ -145,6 +146,8 @@ functions_relevant <- data.frame(functions0$category,                           
 
                                  functions0$NADH_dehydrogenase_subunit_5,                                                      functions0$Beta.galactosidase_.EC_3.2.1.23..2,
                                  functions0$Excinuclease_ABC_subunit_A,                                                        functions0$Lead._cadmium._zinc_and_mercury_transporting_ATPase_.EC_3.6.3.3._.EC_3.6.3.5.._Copper.translocating_P.type_ATPase_.EC_3.6.3.4.)
+
+
 
 
 # changing col names, forging Other abundances

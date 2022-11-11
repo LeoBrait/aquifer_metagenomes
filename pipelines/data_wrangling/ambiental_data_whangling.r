@@ -1,7 +1,11 @@
 
-### Eliminating Soil organic carbon content(soc) due to the number of missing data
+# Eliminating Soil organic carbon content(soc) due to the number of missing data
 drop <- c("soc")
-ambiental_clustered <- ambiental_clustered[, !(names(ambiental_clustered) %in% drop)]
+ambiental_clustered <- ambiental_clustered[, !(names(
+                                            ambiental_clustered
+                                                    ) %in% drop
+                                               )
+                                           ]
 
 ### Binding bdod data and annotated data to drop some NA rows
 genus_ambiental <- cbind(genus_numeric, bdod = ambiental_clustered$bdod)

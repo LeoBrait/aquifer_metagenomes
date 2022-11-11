@@ -117,3 +117,6 @@ BoxPannel
 ggsave(plot = BoxPannel, filename = paste("outputs//Figures//FinalBox.png", sep = ""), width = unit(19, "cm"), height = unit(19, "cm"), limitsize = FALSE)
 ggsave(plot = BoxPannel, filename = paste("outputs//Figures//FinalBox.pdf", sep = ""), width = unit(19, "cm"), height = unit(19, "cm"), limitsize = FALSE)
 ggsave(plot = BoxPannel, filename = paste("outputs//Figures//FinalBox.svg", sep = ""), width = unit(19, "cm"), height = unit(19, "cm"), limitsize = FALSE)
+
+rm(functions, phyla, genus, P1, P2, P3, P4, pairwise_fun_div,
+   pairwise_genus_rich)  #free memory

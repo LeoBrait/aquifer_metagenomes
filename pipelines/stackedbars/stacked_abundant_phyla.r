@@ -41,9 +41,9 @@ a_phyla <- ggplot(stacked_phyla, aes(x = samples, y = value, fill = variable)) +
   theme(axis.line = element_line()) +
   theme(axis.ticks = element_blank()) +
   theme(axis.line.x = element_blank()) +
-  theme(axis.line.y = element_blank())+
+  theme(axis.line.y = element_blank()) +
   scale_y_continuous(labels = scales::number_format(accuracy = 0.01,
-                                                  #decimal.mark = "."))
+                                                  decimal.mark = "."))
 
 
 a_phyla

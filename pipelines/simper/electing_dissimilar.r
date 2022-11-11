@@ -5,7 +5,7 @@ df0 <- as.data.frame(cbind(df0$comparison, df0$contribution, df0$OTU))
 colnames(df0) <- c("comparison", "contribution", "OTU")
 df0$contribution <- as.numeric(df0$contribution)
 levels <- unique(df0$comparison)
-subset_phyla_contribution <- list(NULL)
+subset_contribution <- list(NULL)
 firsts <- c()
 seconds <- c()
 thirds <- c()
@@ -21,86 +21,86 @@ for (x in 1:length(levels)){
         dummy <- subset(df0, comparison == levels[x])
         dummy <- arrange(dummy, -contribution)
         row.names(dummy) <- NULL
-        subset_phyla_contribution[x] <- list(dummy)
-                                                                            }
+        subset_contribution[x] <- list(dummy)
+                          }
 
 
 
 
-for (x in 1:length(subset_phyla_contribution)) {
-        firsts[length(firsts) + 1] <- as.data.frame(subset_phyla_contribution[x])[1, 3]
-        print(as.data.frame(subset_phyla_contribution[x])[1, 3])
+for (x in 1:length(subset_contribution)) {
+        firsts[length(firsts) + 1] <- as.data.frame(subset_contribution[x])[1, 3]
+        print(as.data.frame(subset_contribution[x])[1, 3])
                                                                                       }
 
 
 
-for (x in 1:length(subset_phyla_contribution)){
-        dummy <- as.data.frame(subset_phyla_contribution[x])[2, 3]
+for (x in 1:length(subset_contribution)){
+        dummy <- as.data.frame(subset_contribution[x])[2, 3]
         if (dummy %in% firsts) {
                 } else {
-                        seconds[length(seconds) + 1] <- as.data.frame(subset_phyla_contribution[x])[2, 3]
-                        print(as.data.frame(subset_phyla_contribution[x])[2, 3])
+                        seconds[length(seconds) + 1] <- as.data.frame(subset_contribution[x])[2, 3]
+                        print(as.data.frame(subset_contribution[x])[2, 3])
                                                                                                         }
                                                                                                           }
 
-for (x in 1:length(subset_phyla_contribution)) {
-        dummy <- as.data.frame(subset_phyla_contribution[x])[3, 3]
+for (x in 1:length(subset_contribution)) {
+        dummy <- as.data.frame(subset_contribution[x])[3, 3]
         if (dummy %in% firsts || dummy %in% seconds) {
                 } else {
-                        thirds[length(thirds) + 1] <- as.data.frame(subset_phyla_contribution[x])[3, 3]
-                        print(as.data.frame(subset_phyla_contribution[x])[3, 3])
+                        thirds[length(thirds) + 1] <- as.data.frame(subset_contribution[x])[3, 3]
+                        print(as.data.frame(subset_contribution[x])[3, 3])
                                                                                                       }
                                                                                                         }
 
-for (x in 1:length(subset_phyla_contribution)){
-        dummy <- as.data.frame(subset_phyla_contribution[x])[4, 3]
+for (x in 1:length(subset_contribution)){
+        dummy <- as.data.frame(subset_contribution[x])[4, 3]
         if (dummy %in% firsts || dummy %in% seconds || dummy %in% thirds) {
                 } else {
-                        fourths[length(fourths) + 1] <- as.data.frame(subset_phyla_contribution[x])[4, 3]
-                        print(as.data.frame(subset_phyla_contribution[x])[4, 3])
+                        fourths[length(fourths) + 1] <- as.data.frame(subset_contribution[x])[4, 3]
+                        print(as.data.frame(subset_contribution[x])[4, 3])
                                                                                                       }
                                                                                                         }
 
 
-for (x in 1:length(subset_phyla_contribution)){
-        dummy <- as.data.frame(subset_phyla_contribution[x])[5, 3]
+for (x in 1:length(subset_contribution)){
+        dummy <- as.data.frame(subset_contribution[x])[5, 3]
         if (dummy %in% firsts || dummy %in% seconds || dummy %in% thirds || dummy %in% fourths) {
                 } else {
-                        fives[length(fives) + 1] <- as.data.frame(subset_phyla_contribution[x])[5, 3]
-                        print(as.data.frame(subset_phyla_contribution[x])[5, 3])
+                        fives[length(fives) + 1] <- as.data.frame(subset_contribution[x])[5, 3]
+                        print(as.data.frame(subset_contribution[x])[5, 3])
                                                                                                       }
                                                                                                         }
-for (x in 1:length(subset_phyla_contribution)){
-        dummy <- as.data.frame(subset_phyla_contribution[x])[6, 3]
+for (x in 1:length(subset_contribution)){
+        dummy <- as.data.frame(subset_contribution[x])[6, 3]
         if (dummy %in% firsts || dummy %in% seconds || dummy %in% thirds || dummy %in% fourths || dummy %in% fives) {
                 } else {
-                        six[length(six) + 1] <- as.data.frame(subset_phyla_contribution[x])[6, 3]
-                        print(as.data.frame(subset_phyla_contribution[x])[6, 3])
+                        six[length(six) + 1] <- as.data.frame(subset_contribution[x])[6, 3]
+                        print(as.data.frame(subset_contribution[x])[6, 3])
                                                                                                       }
                                                                                                         }
 
-for (x in 1:length(subset_phyla_contribution)){
-        dummy <- as.data.frame(subset_phyla_contribution[x])[7, 3]
+for (x in 1:length(subset_contribution)){
+        dummy <- as.data.frame(subset_contribution[x])[7, 3]
         if (dummy %in% firsts || dummy %in% seconds || dummy %in% thirds || dummy %in% fourths || dummy %in% fives || dummy %in% six) {
                 } else {
-                        seven[length(seven) + 1] <- as.data.frame(subset_phyla_contribution[x])[7, 3]
-                        print(as.data.frame(subset_phyla_contribution[x])[7, 3])
+                        seven[length(seven) + 1] <- as.data.frame(subset_contribution[x])[7, 3]
+                        print(as.data.frame(subset_contribution[x])[7, 3])
                                                                                                       }
                                                                                                         }
-for (x in 1:length(subset_phyla_contribution)){
-        dummy <- as.data.frame(subset_phyla_contribution[x])[8, 3]
+for (x in 1:length(subset_contribution)){
+        dummy <- as.data.frame(subset_contribution[x])[8, 3]
         if (dummy %in% firsts || dummy %in% seconds || dummy %in% thirds || dummy %in% fourths || dummy %in% fives || dummy %in% six || dummy %in% seven) {
                 } else {
-                        eight[length(eight) + 1] <- as.data.frame(subset_phyla_contribution[x])[8, 3]
-                        print(as.data.frame(subset_phyla_contribution[x])[8, 3])
+                        eight[length(eight) + 1] <- as.data.frame(subset_contribution[x])[8, 3]
+                        print(as.data.frame(subset_contribution[x])[8, 3])
                                                                                                       }
                                                                                                         }
-for (x in 1:length(subset_phyla_contribution)){
-        dummy <- as.data.frame(subset_phyla_contribution[x])[9, 3]
+for (x in 1:length(subset_contribution)){
+        dummy <- as.data.frame(subset_contribution[x])[9, 3]
         if (dummy %in% firsts || dummy %in% seconds || dummy %in% thirds || dummy %in% fourths || dummy %in% fives || dummy %in% six || dummy %in% seven || dummy %in% eight) {
                 } else {
-                        nine[length( nine) + 1] <- as.data.frame(subset_phyla_contribution[x])[9, 3]
-                        print(as.data.frame(subset_phyla_contribution[x])[9, 3])
+                        nine[length( nine) + 1] <- as.data.frame(subset_contribution[x])[9, 3]
+                        print(as.data.frame(subset_contribution[x])[9, 3])
                                                                                                       }
                                                                                                         }
 
@@ -152,4 +152,4 @@ nine$pos <- rep(9, nrow(nine))
 
 ranking <- data.table::rbindlist(list(firsts, seconds, thirds, fourths, fives, six, seven, eight, nine))
 row.names(ranking) <- NULL
-rm(firsts, seconds, thirds, fourths, levels, subset_phyla_contribution, df0)
+rm(firsts, seconds, thirds, fourths, levels, subset_contribution, df0)

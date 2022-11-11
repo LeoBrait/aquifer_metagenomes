@@ -1,100 +1,76 @@
-############################# SETWD ##########
-##############################################
-#Description: Please, change the path of the
-#setwd() function to the directory "aquifers_
-#master" in your own computer.
-##############################################
+#**************** 0 SETWD ******************************************************
+#*******************************************************************************
+#Description: Please, change the path of the setwd() function to the directory
+#"aquifers_master" in your own computer.
+#*******************************************************************************
 
 setwd(
       )
 
-################ 1.0 LOAD LIBRARIES ##########
-##############################################
-#Description: Check on the script "libraries.r"
-#if all libraries are properly installed with
-#their dependencies, then run this script.
-##############################################
+#**************** 1.1 LOAD LIBRARIES *******************************************
+#*******************************************************************************
+#Description: Check on the script "libraries.r" if all libraries are properly
+#installed with their dependencies, then run this script.
+#*******************************************************************************
 
 source(
       "pipelines//utilities//libraries.r"
       )
 
-############################### COLORS ########
-###############################################
-#Description: Here we load the color of all
-#plots in a propper order. "Color plot" stands
-#for the CCA and NMDS analysis. "Stacked_color"
-#is for the stacked bars, and fun_color and
-# tax_color stands for our boxplots. Font sizes
-#for all plots.
-###############################################
+#**************** 1.2 FUNCTIONS, COLORS AND SETTINGS ***************************
+#*******************************************************************************
+#Description: Here we load necessary functions used in the pipepine, the color
+#of all plots and some universal settings for inputs in our functions and
+#graphics.
+#*******************************************************************************
 
 source(
       "pipelines//utilities//colors_fonts.r"
-)
-
-########################## FUNCTIONS ##########
-###############################################
-#Description: The functions hull() and norma-
-#lize, necessary for extract hull data for the
-#CCA plots and to normalize environmental va-
-#riables, and the function get_only_legend()
-#to get common legend for pannels.
-##############################################
-
-source(
-      "pipelines//utilities//functions.r"
       )
 
-##################### INPUT SETTINGS ##########
-###############################################
-#Description: Here we Load all the necessary
-#data for analysis. The annotated matrix for
-#functions, taxonomy and metadata of the aquifer
-#samples
-##############################################
+#**************** 2 INPUT LOADING **********************************************
+#*******************************************************************************
+#Description: Here we Load all the necessary data for analysis. The annotated
+#matrix for functions(lvl4), taxonomy(phyla, class, genera) and metadata of the
+#aquifer samples.
+#*******************************************************************************
 
 source(
       "pipelines//data_wrangling//load_inputs.r"
       )
 
-####################### DATA WRANGLING ########
-###############################################
-#Description: This script will handle the data,
-#produce the only numeric dataframes and gene-
-#rate a list of samples names for latter plots.
-##############################################
+#**************** 2.1  DATA WRANGLING ******************************************
+#*******************************************************************************
+#Description: This script will handle the data, produce the strictly numeric
+#dataframes and generate a list of samples names for latter plots.
+#*******************************************************************************
 
 source(
       "pipelines//data_wrangling//general_data_wrangling.r"
       )
 
+#**************** 3 SIMPER ANALYSIS ********************************************
+#*******************************************************************************
+#Description: Here we are going to do 3 SIMPER analysis, for genera, phyla and
+#functions. The final result with only the significant values go to the "result"
+#path, and the partial (with all values) goes to "output_name" path.
+#*******************************************************************************
 
 
-###############################################
-############################### SIMPER ########
-#Description: Here we are going to do 3 SIMPER
-#analysis. If you already have the simper summa
-#ry tables, it is not necessary.The final result
-#with only the significant values go to the "result"
-#path, and the partial (withall values) goes to
-#"output_name" path.
-###############################################
-
-###### SIMPER GENERAL AMBIENT
+###### Simper general ambient
 groups <- genus0$category
 par <- 6                   #Define how many cores you do want to use on SIMPER
-per <- 4999             #Define the permutations for SIMPER
+per <- 4999                #Define the permutations for SIMPER
 
 
-###### EXECUTION OF PHYLA SIMPER
+###### phyla SIMPER
 input <- phyla_numeric
 path <- "outputs//tables//simper_complete//taxonomic_phyla//"
 output_name <- "simper_phyla_summary.csv"
 to_filter <- "outputs//tables//simper_phyla_summary.csv"
 result <- "outputs//tables//simper_phyla_summary(adjusted).csv"
 source(
-        "pipelines////simper//simper.r"
+        "pipelines//simper//simper.r"
       )
 
 
@@ -119,15 +95,12 @@ source(
       "pipelines//simper//simper.r"
       )
 
-
-###############################################
-####################### RANKING SIMPER ########
-#Description: We are going to count the fre-
-#quency each OTU or function appeared on the
-#top positions of SIMPER comparissons, then
-#we gonna rank these elements. The tables show
-#porition/OTO/frequency/position on comparations.
-###############################################
+#**************** 3.2 RANKING SIMPER *******************************************
+#*******************************************************************************
+#Description: We are going to do a table ranking the OTU by the frequency of
+#their best position on pair comparissons of SIMPER.
+#The tables show porition/OTU/frequency/position on comparations.
+#*******************************************************************************
 
 source(
        "pipelines//simper//ranking_simper.r"
@@ -136,37 +109,23 @@ View(ranking_phyla)
 View(ranking_genus)
 View(ranking_func)
 
-
-###### example of Dissimilar Genera Abundances
-genus0 %>% group_by(category) %>% dplyr::summarise(mean(Smithella))
-###### example of Dissimilar Rare Phyla Abundances
-phyla_numeric %>% group_by(category) %>% dplyr::summarise(mean(Candidatus.Wolfebacteria))
-###### example of Dissimilar Functions Abundances
-functions0 %>% group_by(category) %>% dplyr::summarise(mean(TRAP.type_C4.dicarboxylate_transport_system._large_permease_component.2))
-
-phyla_numeric %>% dplyr::summarise(mean(Proteobacteria))
-proteo_numeric %>% dplyr::summarise(mean(Gammaproteobacteria))
-proteo_numeric %>% dplyr::summarise(mean(Alphaproteobacteria))
-proteo_numeric %>% dplyr::summarise(mean(Deltaproteobacteria))
-phyla_numeric %>% dplyr::summarise(mean(Actinobacteria))
-phyla_numeric %>% dplyr::summarise(mean(Euryarchaeota))
-###############################################
-######################### CCA and NMDS ########
-#Description: Here we are going to do CCA Analysis
-#to test the ambiental correlations with micro-
-#bial compositions.
-###############################################
+#**************** 4 CCA and NMDS ***********************************************
+#*******************************************************************************
+#Description: Here we are going to do CCA Analysis to test the ambiental
+#correlations with microbial compositions and MDS analysis to test the grouping
+#of aquifer ecological landscapes.
+#*******************************************************************************
 
 source(
        "pipelines//cca//cca_master.r"
       )
-      
-###############################################
-################# PERMANOVAS PERANOVAS ########
-#Description: Compare difference on compositions
-#by Permanova and diferences on richnnes and
-#diversity by Peranovas.
-###############################################
+
+#**************** 5 PERMANOVAS PERANOVAS ***************************************
+#*******************************************************************************
+#Description: Compare difference on compositions by Permanova and diferences on 
+#richnnes and diversity by Peranovas. The First script is to generate the data
+#The second is to generate graphics
+#*******************************************************************************
 
 source(
        "pipelines//abundances_diversity//perma_peranova.r"
@@ -174,13 +133,12 @@ source(
 source(
        "pipelines//abundances_diversity//boxplots.r"
       )
-rm(functions, phyla, genus, P1, P2, P3, P4, pairwise_fun_div, pairwise_genus_rich)  #free memory
 
-###############################################
-########################### ABUNDANCES ########
-#Description: The most abundant units on our
-#dataset.
-###############################################
+#**************** 6 ABUNDANCES *************************************************
+#*******************************************************************************
+#Description: The most abundant units on our dataset. Then plot the data
+#*******************************************************************************
+
 source(
       "pipelines//abundances_diversity//abundances.r"
       )
@@ -189,8 +147,8 @@ View(abundant_phyla_ord)
 View(rare_phyla_ord)
 
 
-###############################################
-########################## STACKED BARs #######
+
+########################## STACKED BARS
 
 
 ###### Data for all them
@@ -200,22 +158,13 @@ source(
 
 
 ###### Abundant Phyla (FIG.1)
-titletext <- 25
-axistext <- unit(15, "cm")
-striptext <- unit(17, "cm")
-legendtext <- unit(18, "cm")
-barwidth <- 1.01
-pannel_spacing <- 0.02
-plotwidth <-  unit(25, "cm")
-plotheight <- unit(10, "cm")
-dpi <- 500
-legend_space <- unit(1.7, "cm")
+
 source(
         "pipelines//stackedbars//stacked_abundant_phyla.r"
       )
 
 
-####### SIMPER STACKD (FIG.2)
+####### SIMPER STACKED (FIG.2)
 titletext <- 25
 axistext <- unit(15, "cm")
 striptext <- unit(17, "cm")
@@ -231,7 +180,7 @@ source(
       )
 
 
-####### SIMPER STACKED WITH NELSON (SUPP)
+####### SIMPER STACKED WITHOUT NELSON (SUPP)
 titletext <- 25
 axistext <- unit(15, "cm")
 striptext <- unit(17, "cm")

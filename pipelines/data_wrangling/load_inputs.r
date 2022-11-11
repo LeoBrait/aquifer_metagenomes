@@ -1,41 +1,20 @@
 
-        metadata0 <- read_csv(
-                              "inputs//october_annotated_groundwater_samples_metadata.csv"
-                              )
-        genus0 <- read_csv(
-                              "inputs//october_genus_groundwater_annotated_matrix.csv"
-                          )
-        functions0 <- read_csv(
-                              "inputs//october_functional_geral_matrix_lvl4.csv"
-                              )
-        phyla0 <- read_csv(
-                              "inputs//october_phyla_groundwater_annotated_matrix.csv"
-                          )
-        proteo0 <- read_csv(
-                              "inputs//october_proteobacteria.csv"
-                           )
-        amb0 <- read_csv(
-                              "inputs//samples_metagenome_envi.csv"
-                        )
-
-        if (LOAD_RAW_FUNCTIONS == "yes") {
-                functions_complete0 <- read_csv(
-                                                "inputs//october_all_levels_and_functions_groundwater.csv",
-                                                ) #Unused data.frame
-
-                                         }
-        save.image(
-                    "images//starting_point.RData"
+metadata0 <- read_csv(
+                      "inputs//metadata.csv"
+                     )
+genus0 <- read_csv(
+                  "inputs//genus.csv"
                   )
+functions0 <- read_csv(
+                       "inputs//functional_lvl4.csv"
+                       )
+phyla0 <- read_csv(
+                  "inputs//phyla.csv"
+                  )
+proteo0 <- read_csv(
+                   "inputs//proteobacteria.csv"
+                   )
+amb0 <- read_csv(
+                  "inputs//environmental.csv"
+                )
 
-                  n_sequences <- read_csv(
-                              "inputs//number_of_sequences.csv"
-                        )
-
-total <- sum(n_sequences$bp_count_raw)
-bp_sample <- total / 149
-bp_sample
-sequences <- bp_sample
-
-sequences <- total/ 149
-sequences
