@@ -45,7 +45,7 @@ Here we use the R language on version 4.2.1 and the following libraries:
 ```Markdown
 aquifers_master
 ├─ README.md
-├─ inputs                                      #all input tables
+├─ inputs                                      #all functional and taxonomic annotated input tables
 │  ├─ environmental.csv
 │  ├─ functional_all_levels.csv
 │  ├─ functional_lvl4.csv
@@ -54,8 +54,8 @@ aquifers_master
 │  ├─ phyla.csv
 │  ├─ proteobacteria.csv
 │  └─ simper_ranking.csv
-├─ outputs                                     #Resulting figures, tables and 
-│  ├─ Figures                                  #other data
+├─ outputs                                     #Resulting figures, tables and other data
+│  ├─ Figures                                  
 │  ├─ other
 │  └─ tables
 │     ├─ simper_complete
@@ -66,7 +66,7 @@ aquifers_master
 │     └─ simper_phyla_summary
 └─ pipelines                                   #all r-language scripts
    ├─ **master.r**                             #the master script
-   ├─ utilities                             
+   ├─ utilities                                
    │  ├─ colors_fonts.r
    │  ├─ functions.r
    │  └─ libraries.r
@@ -74,13 +74,13 @@ aquifers_master
    │  ├─ ambiental_data_whangling.r
    │  ├─ general_data_wrangling.r
    │  └─ load_inputs.r
-   ├─ simper
+   ├─ simper                                    #simper analysis pipeline
    │  ├─ electing_dissimilar.r
    │  ├─ ranking_simper.r
    │  ├─ save_simper_specific.r
    │  ├─ simper.r
    │  └─ summary_simper.r
-   ├─ cca
+   ├─ cca                                       #cca analysis pipeline
    │  ├─ ambiental_correlations.r
    │  ├─ cca_analysis.r
    │  ├─ cca_master.R
@@ -90,19 +90,19 @@ aquifers_master
    │  ├─ plot_cca_functions_data.r
    │  ├─ plot_cca_genus_data.r
    │  └─ plot_cca_phyla_data.r
-   ├─ abundances_diversity
+   ├─ abundances_diversity                      #measures of abundances
    │  ├─ abundances.r
    │  ├─ abundances_for_abstract.r
    │  ├─ boxplots.r
    │  ├─ examples.r
    │  └─ perma_peranova.r
-   ├─ nmds
+   ├─ nmds                                      #nmds analysis pipelines
    │  ├─ nmds_func.r
    │  ├─ nmds_legend.r
    │  ├─ nmds_master.r
    │  ├─ nmds_phyla.R
    │  └─ plot_nmds_aes.r
-   └─ stackedbars
+   └─ stackedbars                               #Stackedbars of taxa and functions relative abundances
       ├─ data_stacked.r
       ├─ nelson.r
       ├─ pannel_stacked_bars.r
