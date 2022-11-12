@@ -45,7 +45,7 @@ Here we use the R language on version 4.2.1 and the following libraries:
 ```Markdown
 aquifers_master
 ├─ README.md
-├─ inputs
+├─ inputs                                      #all input tables
 │  ├─ environmental.csv
 │  ├─ functional_all_levels.csv
 │  ├─ functional_lvl4.csv
@@ -54,19 +54,19 @@ aquifers_master
 │  ├─ phyla.csv
 │  ├─ proteobacteria.csv
 │  └─ simper_ranking.csv
-├─ outputs
-│  ├─ Figures     
+├─ outputs                                     #Resulting figures, tables and 
+│  ├─ Figures                                  #other data
 │  ├─ other
 │  └─ tables
 │     ├─ simper_complete
 │     │  ├─ func_lvl4
 │     │  ├─ taxonomic_gen
 │     │  └─ taxonomic_phyla
-│     ├─ simper_phyla_summary(adjusted).csv
-│     └─ simper_phyla_summary.csv
-└─ pipelines
-   ├─ **master.r**
-   ├─ utilities
+│     ├─ simper_phyla_summary(adjusted)
+│     └─ simper_phyla_summary
+└─ pipelines                                   #all r-language scripts
+   ├─ **master.r**                             #the master script
+   ├─ utilities                             
    │  ├─ colors_fonts.r
    │  ├─ functions.r
    │  └─ libraries.r
