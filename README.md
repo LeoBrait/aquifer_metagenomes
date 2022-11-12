@@ -20,7 +20,7 @@ Here we use the R language on version 4.2.1 and the following libraries:
 - **psych(2.2.9)**
 - **raster(3.63)**
 
-### 4. To perform statistic analysis
+### 4. To perform statistical analysis
 - **vegan(2.62)** 
 - **lmPerm(2.1.0)**
 - **stats(base)** 
@@ -40,6 +40,74 @@ Here we use the R language on version 4.2.1 and the following libraries:
 - **corrplot(0.92)**
 - **ggplotify(0.1.0)**
 
+## Folder structure:
+
+aquifers_master
+├─ README.md
+├─ inputs
+│  ├─ environmental.csv
+│  ├─ functional_all_levels.csv
+│  ├─ functional_lvl4.csv
+│  ├─ Funçoes mais importantes e ordenadas 2.txt
+│  ├─ genus.csv
+│  ├─ metadata.csv
+│  ├─ phyla.csv
+│  ├─ proteobacteria.csv
+│  └─ simper_ranking.csv
+├─ outputs
+│  ├─ Figures     
+│  ├─ other
+│  └─ tables
+│     ├─ simper_complete
+│     │  ├─ func_lvl4
+│     │  ├─ taxonomic_gen
+│     │  └─ taxonomic_phyla
+│     ├─ simper_phyla_summary(adjusted).csv
+│     └─ simper_phyla_summary.csv
+└─ pipelines
+   ├─ **master.r** 
+   ├─ utilities
+   │  ├─ colors_fonts.r
+   │  ├─ functions.r
+   │  └─ libraries.r
+   ├─ data_wrangling
+   │  ├─ ambiental_data_whangling.r
+   │  ├─ general_data_wrangling.r
+   │  └─ load_inputs.r
+   ├─ simper
+   │  ├─ electing_dissimilar.r
+   │  ├─ ranking_simper.r
+   │  ├─ save_simper_specific.r
+   │  ├─ simper.r
+   │  └─ summary_simper.r
+   ├─ cca
+   │  ├─ ambiental_correlations.r
+   │  ├─ cca_analysis.r
+   │  ├─ cca_master.R
+   │  ├─ f_model.r
+   │  ├─ multiconstrained.r
+   │  ├─ plot_cca_aes.r
+   │  ├─ plot_cca_functions_data.r
+   │  ├─ plot_cca_genus_data.r
+   │  └─ plot_cca_phyla_data.r
+   ├─ abundances_diversity
+   │  ├─ abundances.r
+   │  ├─ abundances_for_abstract.r
+   │  ├─ boxplots.r
+   │  ├─ examples.r
+   │  └─ perma_peranova.r
+   ├─ nmds
+   │  ├─ nmds_func.r
+   │  ├─ nmds_legend.r
+   │  ├─ nmds_master.r
+   │  ├─ nmds_phyla.R
+   │  └─ plot_nmds_aes.r
+   └─ stackedbars
+      ├─ data_stacked.r
+      ├─ nelson.r
+      ├─ pannel_stacked_bars.r
+      └─ stacked_abundant_phyla.r
+
 ## Getting started:
 After installing R language and all libraries above, simply download all the project, go to pipelines/master.r and change the path of setwd() to the correspondent path of aquifers_master on your computer and run the code. 
 
@@ -50,4 +118,4 @@ After installing R language and all libraries above, simply download all the pro
 
 ## Versions:
 First submission on: 05/11/2022
-Last Update on: 06/11/2022
+Last Update on: 11/11/2022
