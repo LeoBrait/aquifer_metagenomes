@@ -66,7 +66,7 @@ aquifers_master
 │     ├─ simper_phyla_summary(adjusted).csv
 │     └─ simper_phyla_summary.csv
 └─ pipelines
-   ├─ **master.r**
+   ├─ <span style = "color:blue">*master.r*</span>.
    ├─ utilities
    │  ├─ colors_fonts.r
    │  ├─ functions.r
@@ -111,7 +111,11 @@ aquifers_master
 ```
 
 ## Getting started:
-After installing R language and all libraries above, simply download all the project, go to pipelines/master.r and change the path of setwd() to the correspondent path of aquifers_master on your computer and run the code. 
+After installing R language and all libraries above, simply download all the project, go to pipelines/master.r and change the path of setwd() to the correspondent path of aquifers_master on your computer and run the code. As the example:
+
+```r
+setwd("my_example_path//aquifers_master")
+```
 
 ## Contributors:
 
@@ -119,5 +123,5 @@ After installing R language and all libraries above, simply download all the pro
 **Revised by:** Meirelles, PM
 
 ## Versions:
-First submission on: 05/11/2022
+First submission on: 05/11/2022  
 Last Update on: 11/11/2022
