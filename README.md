@@ -42,6 +42,7 @@ Here we use the R language on version 4.2.1 and the following libraries:
 
 ## Folder structure:
 
+```
 aquifers_master
 ├─ README.md
 ├─ inputs
@@ -107,6 +108,7 @@ aquifers_master
       ├─ nelson.r
       ├─ pannel_stacked_bars.r
       └─ stacked_abundant_phyla.r
+```
 
 ## Getting started:
 After installing R language and all libraries above, simply download all the project, go to pipelines/master.r and change the path of setwd() to the correspondent path of aquifers_master on your computer and run the code. 
