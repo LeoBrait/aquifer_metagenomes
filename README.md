@@ -66,7 +66,7 @@ aquifers_master
 │     ├─ simper_phyla_summary(adjusted).csv
 │     └─ simper_phyla_summary.csv
 └─ pipelines
-   ├─ <span style = "color:blue">*master.r*</span>.
+   ├─ <span style="color: blue;">*master.r*</span>
    ├─ utilities
    │  ├─ colors_fonts.r
    │  ├─ functions.r
