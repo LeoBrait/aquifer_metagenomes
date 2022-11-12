@@ -42,7 +42,7 @@ Here we use the R language on version 4.2.1 and the following libraries:
 
 ## Folder structure:
 
-```
+```markdown
 aquifers_master
 ├─ README.md
 ├─ inputs
@@ -66,7 +66,7 @@ aquifers_master
 │     ├─ simper_phyla_summary(adjusted).csv
 │     └─ simper_phyla_summary.csv
 └─ pipelines
-   ├─ <b>master.r**</b>
+   ├─ <b>master.r</b>
    ├─ utilities
    │  ├─ colors_fonts.r
    │  ├─ functions.r
