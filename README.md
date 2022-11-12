@@ -49,7 +49,6 @@ aquifers_master
 │  ├─ environmental.csv
 │  ├─ functional_all_levels.csv
 │  ├─ functional_lvl4.csv
-│  ├─ Funçoes mais importantes e ordenadas 2.txt
 │  ├─ genus.csv
 │  ├─ metadata.csv
 │  ├─ phyla.csv
