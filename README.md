@@ -66,7 +66,7 @@ aquifers_master
 │     ├─ simper_phyla_summary(adjusted).csv
 │     └─ simper_phyla_summary.csv
 └─ pipelines
-   ├─ <b>master.r</b>
+   ├─ **master.r**
    ├─ utilities
    │  ├─ colors_fonts.r
    │  ├─ functions.r
