@@ -1,3 +1,6 @@
 *.code-workspace
 *.lintr
 *.Rprofile
+*func_lvl3.r
+*.vs
+

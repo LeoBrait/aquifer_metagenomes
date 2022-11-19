@@ -1,6 +1,6 @@
-functions <- functions0
-genus <- genus0
-phyla <- phyla0
+functions <-  func_numeric
+genus <- genus_numeric
+phyla <- phyla_numeric
 category <- functions0$category
 
 #FUNCTIONAL PERMANOVA
@@ -31,13 +31,16 @@ rm(phyla_dist_matrix, phyla_perm_model, perma_phyla_pairwise)
 genus$richness <- rowSums(genus_numeric > 0) #Array of Genera Richness
 functions$richness <- rowSums(func_numeric > 0)  #Array of Functions Richness
 
-func_numeric$category <- category
-func_numeric$richness <- functions$richness
-func_numeric %>% group_by(category) %>% dplyr::summarise(median(richness))
+functions$category <- category
+genus$category <- category
+functions %>% group_by(category) %>% dplyr::summarise(median(richness))
+genus %>% group_by(category) %>% dplyr::summarise(median(richness))
 
 #Shannon diversity
 genus$diversity <- exp(diversity(genus_numeric)) #Getting genera diversity and transforming by exp
 functions$diversity <- exp(diversity(func_numeric)) #Same here
+functions %>% group_by(category) %>% dplyr::summarise(median(diversity))
+genus %>% group_by(category) %>% dplyr::summarise(median(diversity))
 
 bp <- metadata0$bp_count_raw
 
