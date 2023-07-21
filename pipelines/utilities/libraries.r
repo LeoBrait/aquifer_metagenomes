@@ -9,7 +9,7 @@
 packages <- c("vegan", "ggplot2", "cowplot", "tidyverse", "rstatix", "dplyr",
              "reshape", "RColorBrewer", "plyr", "geosphere", "devtools",
              "gridExtra", "multcomp", "parallel", "scales", "evaluate",
-             "raster", "psych", "corrplot", "ggplotify"
+             "raster", "psych", "corrplot", "ggplotify", "lmPerm"
 
              )
 
